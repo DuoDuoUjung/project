@@ -3,89 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python 語言介紹</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-        }
-        .sidebar {
-            width: 200px;
-            background-color: #2e3b4e;
-            color: #fff;
-            padding: 20px;
-            height: 100vh;
-        }
-        .sidebar h2 {
-            font-size: 1.5em;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-        .sidebar ul li input {
-            margin-right: 10px;
-        }
-        .content {
-            padding: 20px;
-            flex-grow: 1;
-        }
-        .content h1 {
-            color: #333;
-        }
-        .content .code {
-            background-color: #000;
-            color: #00ff00;
-            padding: 10px;
-            font-family: monospace;
-            border-radius: 5px;
-        }
-        .btn {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            display: inline-block;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Python 教學</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <h2>助教 Chat 認嗎?</h2>
+    <header>
+        <div class="logo">
+            <h1>助教 Chat 認識嗎？</h1>
+        </div>
+        <nav>
             <ul>
-                <li><input type="radio" name="topic" checked>Python 語言介紹</li>
-                <li><input type="radio" name="topic">內建資料型別</li>
-                <li><input type="radio" name="topic">常值</li>
-                <li><input type="radio" name="topic">變數與數值資料型別</li>
-                <li><input type="radio" name="topic">運算子</li>
-                <li><input type="radio" name="topic">資料型別轉換</li>
-                <li><input type="radio" name="topic">基本輸出入函式</li>
-                <li><input type="radio" name="topic">結構化程式設計</li>
-                <li><input type="radio" name="topic">關係運算子</li>
-                <li><input type="radio" name="topic">邏輯運算子</li>
-                <li><input type="radio" name="topic">選擇結構</li>
-                <li><input type="radio" name="topic">for迴圈</li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">教學區</a></li>
+                <li><a href="#">問答區</a></li>
+                <li><a href="#">測驗區</a></li>
+                <li><a href="#">好友區</a></li>
             </ul>
-        </div>
-        <div class="content">
-            <h1>Python 語言介紹</h1>
-            <p>簡單易懂輕鬆入門: Python 語言是一個奉行極簡主義的語言，閱讀一篇良好的Python程式就好像在讀文章一樣，只是這種文章對格式的要求更為嚴格。這種以接近自然語言的方式來描述程式邏輯(或稱為虛擬碼)的本質，Python 是語言最大的優點之一。</p>
-            <div class="code">
-                print("hello, Python is really easy")
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li>Python 語言介紹</li>
+                <li>內建資料型別</li>
+                <li>常值</li>
+                <li>變數與數值資料型別</li>
+                <li>運算子</li>
+                <li>資料型別轉換</li>
+                <li>基本輸出入函式</li>
+                <li>結構化程式設計</li>
+                <li>關係運算子</li>
+                <li>邏輯運算式</li>
+                <li>選擇結構</li>
+                <li>for迴圈</li>
+            </ul>
+        </aside>
+
+        <div class="toggle-btn" id="toggle-btn">&#9664;</div> <!-- 箭頭符號 -->
+
+        <section class="content">
+            <h2>Q1.</h2>
+            <p>
+                撰寫一個程式，宣告兩個變數 x、h，分別為三角形的底 25.6、高 10.84，請計算三角形的面積(顯示到小數第二位)
+            </p>
+            <div class="hi">
+            <pre>
+                <code>
+                    # 宣告變數
+                    x = 25.4
+                    h = 10.84
+                    # 計算面積
+                    area = 0.5 * x * h
+                    print('%.2f' % area)
+                </code>
+            </pre>
+            <div class="go">
+                <p>下一題</p>
             </div>
-            <div class="btn">小試身手</div>
-        </div>
-    </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script> <!-- 引入JavaScript文件 -->
 </body>
 </html>
