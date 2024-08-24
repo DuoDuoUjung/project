@@ -13,20 +13,33 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Python</a></li>
+                <li class="dropdown">
+                    <a href="#">Python <span class="arrow"></span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">JAVA</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">教學區</a></li>
                 <li><a href="#">問答區</a></li>
                 <li><a href="#">測驗區</a></li>
                 <li><a href="#">好友區</a></li>
             </ul>
         </nav>
-    </header>
+    </header>    
 
     <main>
         <aside class="sidebar" id="sidebar">
             <ul>
-                <li>Python 語言介紹</li>
-                <li>內建資料型別</li>
+                <li>
+                    Python 語言介紹
+                    <span class="fraction">2/3</span>
+                </li>
+                <li>
+                    內建資料型別
+                    <span class="fraction">1/3</span>
+                </li>
                 <li>常值</li>
                 <li>變數與數值資料型別</li>
                 <li>運算子</li>
@@ -48,16 +61,14 @@
                 撰寫一個程式，宣告兩個變數 x、h，分別為三角形的底 25.6、高 10.84，請計算三角形的面積(顯示到小數第二位)
             </p>
             <div class="hi">
-            <pre>
-                <code>
+            <div class="subject">
                     # 宣告變數
                     x = 25.4
                     h = 10.84
                     # 計算面積
                     area = 0.5 * x * h
                     print('%.2f' % area)
-                </code>
-            </pre>
+            </div>
             <div class="go">
                 <p>下一題</p>
             </div>
