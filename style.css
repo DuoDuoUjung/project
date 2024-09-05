@@ -98,6 +98,12 @@ main {
     transform: translateY(-50%);
 }
 
+/* 填满前两个li的圈圈 */
+.sidebar ul li:nth-child(1)::before,
+.sidebar ul li:nth-child(2)::before {
+    background-color: #344955;
+}
+
 .toggle-btn {
     background-color: #c6c6c6;
     color: white;
@@ -145,12 +151,8 @@ h2 {
     white-space: pre-line;
     font-size: 18px;
     color: white;
-}
-
-.subject code {
-    white-space: pre-line;
-    color: #dcdcdc;
-    font-size: 18px;
+    padding: 15px 20px;
+    line-height: 1.5;
 }
 
 .hi {
@@ -159,7 +161,7 @@ h2 {
 
 .go {
     background-color: #dcdcdc;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 0.1rem 1rem;
     display: inline-block;
     position: absolute;
@@ -198,7 +200,6 @@ h2 {
     max-width: 100px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    margin-top: 10px;
     padding: 12px 16px;
     border-radius: 5px;
     text-align: center;
