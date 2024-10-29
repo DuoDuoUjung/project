@@ -43,7 +43,7 @@ nav .area {
 
 nav ul li {
     font-size: 25px;
-    margin-right: 5rem;
+    margin-right: 7rem;
     align-items: center;
     justify-content: center;
 }
@@ -57,11 +57,6 @@ nav ul li a {
 /*header選擇語言*/
 /* 下拉菜单样式 */
 .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown a {
     position: relative;
 }
 
@@ -118,8 +113,10 @@ nav ul li a {
     text-align: center;
 }
 
+.profile {
+    position: relative;
+}
 
-/* 預設隱藏 profile dropdown */
 .profile-dropdown {
     display: none;
     position: absolute;
@@ -127,9 +124,7 @@ nav ul li a {
     padding: 12px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     margin-top: 200px;
-    right: 30px;
     opacity: 0.8;
     overflow: hidden;
 }
@@ -139,13 +134,13 @@ nav ul li a {
     text-decoration: none;
     display: block;
     padding: 12px;
+    white-space: nowrap;
 }
 
 .profile-dropdown a:hover {
     display: inline-block;
     background-color: white;
     color: black !important;
-    text-align: center;
     border-radius: 3px;
 }
 
