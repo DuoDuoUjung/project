@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在線編輯器</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .editor, .preview { width: 48%; float: left; margin: 1%; }
+        textarea { width: 100%; height: 300px; }
+    </style>
+</head>
+<body>
+    <div class="editor">
+        <h3>Code</h3>
+        <textarea id="Code"></textarea>
+        <button onclick="runCode()">Run</button>
+    </div>
+    <div class="preview">
+        <h3>Preview</h3>
+        <iframe id="preview" style="width: 100%; height: 300px;"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
