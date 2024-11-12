@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', adjustToggleBtnHeight);
 // 窗口调整大小时同步按钮高度
 window.addEventListener('resize', adjustToggleBtnHeight);
 
-function runCode() {
-    const Code = document.getElementById("Code").value;
+function runCodeHtml() {
+    const htmlCode = document.getElementById("htmlCode").value;
     
     const previewFrame = document.getElementById("preview");
     const previewContent = previewFrame.contentDocument || previewFrame.contentWindow.document;
     previewContent.open();
-    previewContent.write(Code);
+    previewContent.write(htmlCode);
     previewContent.close();
 }
