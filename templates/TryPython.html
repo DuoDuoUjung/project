@@ -18,27 +18,30 @@
     </div>
     <div class="output">
         <h3>Output</h3>
-        <pre id="output"></pre>
+        <pre id="output">No output received.</pre>
     </div>
 
     <script>
         async function runPythonCode() {
             const code = document.getElementById("pythonCode").value;
-            console.log("Sending code:", code);  // 檢查發送的代碼
+            console.log("Sending code:", code);  // Log the code being sent to the server
             
             try {
-                const response = await fetch('http://127.0.0.1:5500/run-python', {
+                // Send the Python code to the server
+                const response = await fetch('/run-python', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ code: code })
                 });
 
+                // Check if the response is ok (status code 200-299)
                 if (!response.ok) {
                     throw new Error(`Server error: ${response.status}`);
                 }
 
+                // Parse the JSON response
                 const result = await response.json();
-                console.log("Received result:", result);  // 檢查接收的結果
+                console.log("Received result:", result);  // Log the received result
                 document.getElementById("output").innerText = result.output || "No output received.";
             } catch (error) {
                 console.error("Error:", error);

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在線編輯器</title>
-    <link rel="stylesheet" href="TryHtml.css">
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='TryHtml.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="">
+            <!-- 使用 Flask 的 url_for 函數加載 logo.png -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
         </div>
         <nav>
             <ul>
@@ -28,7 +29,8 @@
                 <li class="area"><a href="#">測驗區</a></li>
                 <li class="area"><a href="#">好友區</a></li>
                 <li class="area profile">
-                    <a href="#"><img src="profile1.png" alt=""></a>
+                    <!-- 使用 Flask 的 url_for 函數加載 profile1.png -->
+                    <a href="#"><img src="{{ url_for('static', filename='profile1.png') }}" alt="Profile"></a>
                     <ul class="profile-dropdown">
                         <li><a href="#">個人資料</a></li>
                         <li><a href="#">登出</a></li>
@@ -41,17 +43,18 @@
     <div class="line">
         <div class="editor">
             <div style="display: flex; justify-content: space-between;">
-                <h2>輸入程式碼</h3>
-                <button onclick="runCodeHtml()" class="start"><i class="fa-solid fa-play"></i></button>
+                <h2>輸入程式碼</h2>
+                <button onclick="runCodeHtml()" class="start"><i class="fas fa-play"></i></button>
             </div>
-            <textarea id="htmlCode"></textarea>
+            <textarea id="htmlCode" style="resize: none;" oninput="autoResize(this)"></textarea>
         </div>
         <div class="preview">
-            <h2>執行結果</h3>
+            <h2>執行結果</h2> <!-- 修正為 <h2> 結束標籤 -->
             <iframe id="preview" class="result"></iframe>
         </div>
     </div>
 
-    <script src="htmlscript.js"></script>
+    <!-- 使用 Flask 的 url_for 加載 JavaScript 檔案 -->
+    <script src="{{ url_for('static', filename='htmlscript.js') }}"></script>
 </body>
 </html>

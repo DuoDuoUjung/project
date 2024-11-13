@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import subprocess
 
 app = Flask(__name__)
@@ -7,19 +7,40 @@ app = Flask(__name__)
 def run_python():
     data = request.get_json()
     code = data.get('code', '')
-    print(f"Received code on server: {code}")  # 確認伺服器接收到的代碼
+    print(f"Received code on server: {code}")
     
     try:
         # 執行 Python 代碼並捕獲輸出
         result = subprocess.run(['python3', '-c', code], capture_output=True, text=True, timeout=5)
         output = result.stdout if result.returncode == 0 else result.stderr
-        print(f"Execution output: {output}")  # 檢查執行結果
+        print(f"Execution output: {output}")
     except subprocess.TimeoutExpired:
         output = "Error: Code execution timed out."
     except Exception as e:
         output = f"Error: {str(e)}"
     
     return jsonify({'output': output})
+
+# 路由配置，直接渲染模板
+@app.route('/TryPython.html')
+def trypython():
+    return render_template('TryPython.html')
+
+@app.route('/TryHtml.html')
+def tryhtml():
+    return render_template('TryHtml.html')
+
+@app.route('/header.html')
+def header():
+    return render_template('header.html')
+
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
+
+@app.route('/x.html')
+def x():
+    return render_template('x.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)
