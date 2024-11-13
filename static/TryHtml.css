@@ -6,41 +6,63 @@ body {
 .line {
     display: flex;
     justify-content: center;
+    gap: 2rem; /* 設置區塊之間的距離 */
 }
 
 .editor,
 .preview {
     padding: 1rem;
-    width: 45%; /* 設置相同的寬度 */
-    height: 350px; /* 設置相同的高度 */
+    width: 45%;
+    height: auto;
     margin-top: 5rem;
     background-color: #c6c6c6;
-    border-radius: 5px;
-    box-sizing: border-box; /* 確保內邊距不影響總寬度 */
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.editor {
-    margin-right: 2.5rem;
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
-.preview {
-    margin-left: 2.5rem;
+.header-row h2 {
+    margin: 0;
 }
 
-textarea,
-iframe {
-    width: 100%; /* 設置內部區域的寬度與父級一致 */
-    height: 70%; /* 設置內部區域的高度與父級一致 */
+textarea {
+    width: 100%; /* 確保寬度與父容器一致 */
+    height: 300px; /* 固定高度 */
+    min-height: 300px; /* 限制最大高度 */
     background-color: #e0dfd8;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    resize: none; /* 禁用手動調整 */
+    resize: none; /* 禁用手動調整大小 */
+    overflow-y: auto; /* 啟用垂直滾動條 */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+iframe {
+    width: 100%; /* 確保寬度與父容器一致 */
+    height: 300px; /* 固定高度 */
+    background-color: #e0dfd8;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 .start {
     border: none;
     background-color: #c6c6c6;
     font-size: 20px;
-    padding-right: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
