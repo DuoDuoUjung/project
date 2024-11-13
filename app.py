@@ -10,15 +10,20 @@ def run_python():
     print(f"Received code on server: {code}")
     
     try:
-        # 執行 Python 代碼並捕獲輸出
-        result = subprocess.run(['python3', '-c', code], capture_output=True, text=True, timeout=5)
-        output = result.stdout if result.returncode == 0 else result.stderr
+        result = subprocess.run(
+            ['python', '-c', code],
+            capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0:
+            output = result.stdout.strip() if result.stdout else "No output produced."
+        else:
+            output = result.stderr.strip()
         print(f"Execution output: {output}")
     except subprocess.TimeoutExpired:
         output = "Error: Code execution timed out."
     except Exception as e:
         output = f"Error: {str(e)}"
-    
+
     return jsonify({'output': output})
 
 # 路由配置，直接渲染模板
