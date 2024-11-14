@@ -39,13 +39,29 @@ def tryhtml():
 def header():
     return render_template('header.html')
 
-@app.route('/index.html')
-def index():
-    return render_template('index.html')
+@app.route('/teach.html')
+def teach():
+    return render_template('teach.html')
 
-@app.route('/x.html')
-def x():
-    return render_template('x.html')
+@app.route('/ans.html')
+def ans():
+    return render_template('ans.html')
+
+@app.route('/login.html')
+def login():
+    return render_template('login.html')
+
+@app.route('/main.html')
+def main():
+    return render_template('main.html')
+
+@app.route('/register.html')
+def register():
+    return render_template('register.html')
+
+@app.route('/profile.html')
+def profile():
+    return render_template('profile.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)
