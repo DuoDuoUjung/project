@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    width: 250px;
+    transition: transform 0.3s ease;
+    position: relative;
+    /* 让侧边栏和内容更紧密 */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    /* 移除默认的列表样式 */
+    padding-left: 2rem;
+}
+
+.sidebar ul li {
+    padding: 0.5rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    justify-content: space-between;
+    /* 内容和文本右对齐 */
+}
+
+.sidebar ul li .fraction {
+    background-color: #dcdcdc;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    /* 防止文本换行 */
+    margin-right: 25px;
+}
+
+.sidebar ul li::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    /* 圈圈的宽度 */
+    height: 10px;
+    /* 圈圈的高度 */
+    border: 2px solid #333;
+    /* 空心圈圈的边框颜色与粗细 */
+    border-radius: 50%;
+    position: absolute;
+    left: -1.5rem;
+    /* 调整圈圈的位置 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 填满前两个li的圈圈 */
+.sidebar ul li:nth-child(1)::before,
+.sidebar ul li:nth-child(2)::before {
+    background-color: #344955;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+}
+
+.toggle-btn {
+    background-color: #c6c6c6;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    left: 250px;
+    /* 初始位置紧邻侧边栏 */
+}
+
+.content {
+    flex: 1;
+    padding: 0 3rem;
+    transition: margin-left 0.3s ease;
+    /* 添加过渡效果 */
+    margin-left: 0px;
+    /* 初始化为侧边栏的宽度 */
+}
+
+.sidebar-collapsed {
+    transform: translateX(-100%);
+}
+
+.toggle-btn-collapsed {
+    transform: translateX(-250px);
+    /* 收起侧边栏时也移动按钮 */
+}
+
+.content-expanded {
+    margin-left: -250px;
+}
+
+h2 {
+    font-size: 40px;
+    color: black;
+}
+
+.subject {
+    background-color: #333;
+    white-space: pre-line;
+    font-size: 18px;
+    color: white;
+    padding: 15px 20px;
+    line-height: 1.5;
+}
+
+.hi {
+    position: relative;
+}
+
+.go {
+    margin-top: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+button {
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #e3e1e1;
+    border: 5px solid #e3e1e1;
+}
