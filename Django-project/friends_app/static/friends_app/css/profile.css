@@ -1,0 +1,240 @@
+/* ================== 個人資料區樣式 ================== */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    /* 限制最大寬度 */
+    margin: 10px auto;
+}
+
+#profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+}
+
+.profile-info h2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#study-streak {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#chat-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* ================== 課程選單樣式 ================== */
+.course-menu {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.course-header span {
+    font-size: 20px;
+    color: #333;
+}
+
+/* ================== 下拉選單樣式 ================== */
+.dropdown-options {
+    display: none;
+    /* 默認隱藏 */
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
+
+.dropdown-option {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-option.selected {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+
+/* ================== 進度條樣式 ================== */
+/* 進度條 */
+.progress {
+    height: 100%;
+    background-color: #001f3f;
+    /* 深藍色 */
+    text-align: right;
+    line-height: 10px;
+    color: white;
+    font-size: 12px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #1a365d;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 12px;
+}
+
+.course-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.course-progress span {
+    flex: 1;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ================== Select 樣式 (下拉選單) ================== */
+select {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+#selected-course {
+    background-color: white;
+    /* 背景顏色 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* 添加陰影 */
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    display: none;
+    /* 默認隱藏 */
+}
+
+#selected-course ul {
+    list-style-type: none;
+    /* 移除列表符號 */
+    padding-left: 0;
+    /* 移除內邊距 */
+}
+
+#selected-course li {
+    margin: 15px 0;
+    /* 保持項目間距 */
+    font-weight: bold;
+    /* 可選：加粗字體 */
+}
+
+/* 可點擊課程項目的樣式 */
+.clickable-course {
+    cursor: pointer;
+    /* 指標變為指向手 */
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.clickable-course:hover {
+    background-color: #f0f0f0;
+    /* 滑上去變色 */
+    text-decoration: underline;
+    /* 滑上去加下劃線 */
+}
+
+/* ================== Flexbox 布局 ================== */
+.profile-progress-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+#progress-section-one {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c6c6c6;
+    padding: 5%;
+    border-radius: 3%;
+}
+
+#progress-section-two {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}

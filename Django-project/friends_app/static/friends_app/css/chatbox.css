@@ -1,0 +1,150 @@
+/* 對話框區域樣式 */
+/* 調整對話框樣式 */
+#chat-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    width: 100vw;
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+
+
+.chat-header {
+    background-color: #e6e9ef;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 100%;
+    /* 設置訊息區域佔滿剩餘空間 */
+    overflow-y: auto;
+    /* 啟用訊息區域滾動 */
+}
+
+/* 接收訊息氣泡 */
+.received-message {
+    display: flex;
+    align-items: center;
+    max-width: 60%;
+}
+
+.received-message .bubble {
+    padding: 10px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 15px 15px 15px 0;
+    margin-left: 10px;
+    position: relative;
+}
+
+.received-message .bubble::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+/* 發送訊息氣泡 */
+.sent-message {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 60%;
+    align-self: flex-end;
+    gap: 10px;
+    /* 與訊息氣泡之間的間距 */
+}
+
+.sent-message .bubble {
+    padding: 10px;
+    background-color: #333333;
+    color: white;
+    border-radius: 15px 15px 0 15px;
+    position: relative;
+    max-width: 100%;
+}
+
+.sent-message .message-avatar {
+    order: 2;
+    /* 將頭像排到右邊 */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sent-message .bubble::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #333333;
+}
+
+/* 頭像樣式 */
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 10px;
+    width: 100%;
+    /* 確保輸入框和按鈕充滿底部區域 */
+}
+
+.chat-input {
+    width: calc(100% - 50px);
+    /* 自動調整寬度，減去送出按鈕的寬度 */
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* 使內邊距包含在寬度和高度中 */
+}
+
+.send-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+
+.send-button:hover {
+    background-color: #0056b3;
+}

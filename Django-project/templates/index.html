@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}首頁 - 助教 Chat 學習平台{% endblock %}
+
+{% block content %}
+<section class="content-area">
+    <h2>這是首頁內容</h2>
+    <p>你可以從這裡導航到各個功能頁面。</p>
+    <p><a href="{% url 'friend_list' %}">前往好友列表</a> | <a href="{% url 'chat_room' %}">進入聊天室</a></p>
+</section>
+{% endblock %}

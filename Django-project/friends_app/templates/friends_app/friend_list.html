@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好友列表</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"> 
+    <link rel="stylesheet" href="{% static 'friends_app/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'friends_app/css/chatbox.css' %}">
+    <link rel="stylesheet" href="{% static 'friends_app/css/profile.css' %}">
+</head>
+<body>
+    <!-- 頁首 -->
+    <header class="header" aria-label="頁首">
+        <div class="logo">
+            <img src="/api/placeholder/50/50" alt="Logo">
+            <h1>助教 Chat</h1>
+        </div>
+        <nav>
+            <div class="user-info">
+                登入的使用者：<strong>{{ user.username }}</strong>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要內容區域 -->
+    <main class="x" aria-label="主要內容">
+        <div class="content-wrapper">
+            <!-- 好友列表側邊欄 -->
+            <aside class="friends-sidebar" aria-label="好友列表側邊欄">
+                <div class="search-friend" aria-label="搜尋好友">
+                    <input type="text" class="search-input" placeholder="Search friends" aria-label="搜尋朋友">
+                    <button class="search-btn" aria-label="搜尋按鈕">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="add-friend-btn" aria-label="加好友按鈕">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <ul class="friends-list" role="list">
+                    {% if friends %}
+                        {% for friend in friends %}
+                        <li role="listitem" tabindex="0" onclick="showProfileInfo('{{ friend.username }}')">
+                            <span class="arrow material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                            <img src="{% if friend.avatar %}{{ friend.avatar.url }}{% else %}/static/images/default-avatar.png{% endif %}" alt="Avatar of {{ friend.username }}" class="friend-avatar">
+                            <a href="javascript:void(0);" class="friend-name">{{ friend.username }}</a>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        <li class="no-friends" role="listitem">目前沒有好友</li>
+                    {% endif %}
+                </ul>                                              
+            </aside>
+            <!-- 加好友模態框 -->
+            <div id="addFriendModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>加好友</h3>
+                        <span class="close" onclick="closeAddFriendModal()">&times;</span>
+                    </div>
+                    
+                    {% if messages %}
+                        <div class="message-box">
+                            {% for message in messages %}
+                                <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <form method="POST" action="{% url 'add_friend' %}">
+                        {% csrf_token %}
+                        <label for="search_type">選擇依據：</label>
+                        <select name="search_type" id="search_type">
+                            <option value="username">Username</option>
+                            <option value="id">ID</option>
+                        </select>
+                        <label for="friend_identifier">輸入好友 ID 或 Username：</label>
+                        <input type="text" name="friend_identifier" placeholder="請輸入好友 ID 或 Username" required>
+                        <button type="submit">加好友</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 個人資訊區 -->
+            <section id="profile-info" class="profile-info" style="display: none;">
+                <div class="profile-progress-wrapper">
+                    <div id="progress-section-one">
+                        <img id="profile-avatar" src="{% if selected_friend.avatar %}{{ selected_friend.avatar.url }}{% else %}/static/images/default-avatar.png{% endif %}" alt="Avatar of {{ selected_friend.username }}" class="friend-avatar">
+                        <h2 id="profile-name">{{ selected_friend.username }}</h2>
+                        <p id="study-streak">連續學習：<span id="streak-count">{{ selected_friend.study_streak }}</span>天</p>
+                        <button id="chat-button" onclick="showChat('{{ selected_friend.username }}')">點我聊天</button>
+                    </div>
+                    
+                    <!-- 課程選單 -->
+                    <div class="course-menu" style="position: relative;">
+                        <!-- 課程選單標題 -->
+                        <div id="course-select" class="course-header">
+                            <span>選擇語言</span>
+                            <span class="arrow-down material-symbols-outlined">expand_more</span>
+                        </div>
+                        <!-- 下拉選單 -->
+                        <div id="dropdown-options" class="dropdown-options"></div>
+                        <!-- 動態顯示選擇的課程及內容 -->
+                        <div id="selected-course"></div>
+                    </div>
+                    
+                                                            
+                </div>
+            </section>                      
+
+            <!-- 聊天區域 -->
+            <section id="chat-area" style="display: none;">
+                <div class="chat-header">
+                    與 <strong id="chat-with-name">admin2</strong> 的聊天
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- 動態填充的訊息會被插入到這裡 -->
+                </div>
+                <div class="chat-input-wrapper">
+                    <input type="text" placeholder="輸入訊息" class="chat-input">
+                    <button class="send-button">➤</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="{% static 'friends_app/js/friends_app.js' %}"></script>
+</body>
+</html>

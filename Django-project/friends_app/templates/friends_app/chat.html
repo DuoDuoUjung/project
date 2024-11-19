@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+</head>
+<body>
+    <h1>聊天訊息</h1>
+    <ul>
+        {% for message in messages %}
+            <li>{{ message.sender.username }}: {{ message.text }} ({{ message.timestamp }})</li>
+        {% endfor %}
+    </ul>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="receiver">選擇收訊者:</label>
+        <select name="receiver" id="receiver">
+            {% for user in users %}
+                <option value="{{ user.username }}">{{ user.username }}</option>
+            {% endfor %}
+        </select><br>
+        <textarea name="message" placeholder="輸入訊息"></textarea><br>
+        <button type="submit">發送</button>
+    </form>
+
+    <a href="{% url 'friend_list' %}">返回好友列表</a>
+</body>
+</html>

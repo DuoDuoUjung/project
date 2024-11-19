@@ -1,0 +1,7 @@
+Username：admin
+Email : test@gmail.com
+Password:654321
+
+
+admin2
+123456

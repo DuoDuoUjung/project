@@ -1,0 +1,18 @@
+# 1. 啟動虛擬環境
+conda activate myenv  # 或者使用 `source myenv/bin/activate`（取決於環境）
+
+# 2. 進入 Django 專案資料夾
+cd Django-project
+
+# 3. 檢查 Django 是否安裝
+pip show django
+
+# 4. 啟動 Django 開發伺服器
+python manage.py runserver
+
+# 5.（若需要）進行資料庫遷移
+python manage.py makemigrations
+python manage.py migrate
+
+
+

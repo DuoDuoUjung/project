@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #D9D9D9;
+}
+form{
+  display:inline;
+}
+/*置中*/
+.block {
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+}
+/*區塊底色*/
+.card {
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    background-color: #E4E4E4;
+    
+}
+.left{
+    float: left;
+    margin: 40px 0px 40px 40px;
+}
+.right{
+    float: right;
+    letter-spacing: 20px;
+    margin: 5% 0% 5% 0%;
+}
+p{
+   padding-top: 10%;
+   padding-bottom: 5%;
+   font-size: 25px;
+}
+
+.save {
+    margin:0% 0% 0% 10%;
+    padding: 5px 17px;
+    border: none;
+    border-radius: 20px;
+    background: #C2C3C3;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.save:hover {
+    background-color: black;
+    color: white;
+}
+.profileimg{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    /*margin-top: 25%;*/
+}
+
+.txt {
+    margin: 40px 40px 0px 40px;
+    letter-spacing: 20px;
+    font-size: 28px;
+    line-height: 10mm;
+    color: #344955;
+    font-weight: bold;
+    max-width: 100%;
+}
+
+.input{
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    width: 150px;
+    height: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+input:focus {
+    border-color: #007BFF;  /* 設定點擊時邊框顏色 */
+    cursor: text;           /* 點擊後指標變為文字輸入樣式 */
+}
+/*彈出視窗*/
+/* 模态框的样式 */
+/* 模态框的样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-content {
+    background-color: rgba(52, 73, 85, 0.7);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #avatarOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* 間隔 */
+  }
+  
+  .avatar-option {
+    cursor: pointer;
+    width: 135px;
+    height: 135px;
+  }
+  
+  .avatar-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* 圆形图片 */
+    border: 2px solid #ccc;
+    transition: border 0.3s ease;
+  }
+  
+  .avatar-option img:hover {
+    border: 2px solid #333; /* 悬停时改变边框颜色 */
+  }
+  
+
+  .frame-text {
+    width: 100%;
+    text-align: center;
+    color: #344955;
+    /*font-weight: bold;*/
+    background: none;
+    border: none;
+    letter-spacing: 0px;
+    font-size: 15px;
+    position: absolute;
+    top: 65%;
+    left: 45.3%;
+    transform: translate(-50%, -50%);
+}
+.frame-name {
+  width: 100%;
+    text-align: center;
+    color: #344955;
+    /*font-weight: bold;*/
+    background: none;
+    border: none;
+    letter-spacing: 0px;
+    font-size: 15px;
+    position: absolute;
+    top: 65%;
+    left: 45.3%;
+    transform: translate(-50%, -50%);
+}
+.frame-birth {
+  width: 100%;
+    text-align: center;
+    color: #344955;
+    /*font-weight: bold;*/
+    background: none;
+    border: none;
+    letter-spacing: 0px;
+    font-size: 15px;
+    position: absolute;
+    top: 65%;
+    left: 45.3%;
+    transform: translate(-50%, -50%);
+}.frame-pw {
+  width: 100%;
+  text-align: center;
+  color: #344955;
+  /*font-weight: bold;*/
+  background: none;
+  border: none;
+  letter-spacing: 0px;
+  font-size: 15px;
+  position: absolute;
+  top: 65%;
+  left: 45.3%;
+  transform: translate(-50%, -50%);
+}
+.frame-email {
+  width: 100%;
+  text-align: center;
+  color: #344955;
+  /*font-weight: bold;*/
+  background: none;
+  border: none;
+  letter-spacing: 0px;
+  font-size: 15px;
+  position: absolute;
+  top: 65%;
+  left: 45.3%;
+  transform: translate(-50%, -50%);
+}
+
+.test{
+  display: inline-block;
+  position: relative;
+}
+.space{
+  padding-bottom: 10px;
+}
+.hidden {
+  display: none;
+}
+
+h3{
+  font-size: 20px;
+  color: white;
+}
+.photo-frame{
+  padding-top: 20px;
+}

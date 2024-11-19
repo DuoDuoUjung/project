@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+.wrap {
+    margin: 6% auto;
+    margin-top: 110px;
+    background-color: #344955;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    opacity: 0.8;
+    position: relative;
+    min-height: 70vh;
+}
+
+
+.box1 {
+    padding: 0px 20px 20px 20px;
+    margin-left: 1%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.box-p {
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.box2 {
+    width: 1px;
+    height: auto;
+    background-color: white;
+    align-self: stretch;
+    margin-top: 22px;
+    margin-left: 30px;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    bottom: 20px;
+}
+
+
+.box3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.frame1,
+.frame2 {
+    background-color: rgba(244, 240, 210, 0.13);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 80px;
+    transition: all 0.3s ease;
+}
+
+.frame-text {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.frame-input {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+}
+
+.frame-input:focus {
+    border-bottom: 2px solid white;
+}
+
+.hidden {
+    display: none;
+}
+
+.frame1 .frame-input,
+.frame2 .frame-input {
+    display: block;
+}
+
+.frame-text1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 7%;
+    margin-left: 10%;
+}
+
+.login-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10%;
+}
+
+.login-button:focus {
+    outline: none;
+}

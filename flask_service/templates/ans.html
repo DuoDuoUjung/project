@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3. 網頁範例</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ans.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='image/logologin.png') }}" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li class="area dropdown">
+                    <a href="#">Python <span class="arrow"></span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="TryPython.html">Python</a></li>
+                        <li><a href="TryHtml.html">HTML</a></li>
+                        <li><a href="#">JAVA</a></li>
+                    </ul>
+                </li>
+                <li class="area"><a href="teach.html">教學區</a></li>
+                <li class="area"><a href="#">問答區</a></li>
+                <li class="area"><a href="ans.html">測驗區</a></li>
+                <li class="area"><a href="#">好友區</a></li>
+                <li class="area profile">
+                    <a href="#"><img src="{{ url_for('static', filename='image/profile1.png') }}" alt=""></a>
+                    <div class="profile-dropdown">
+                        <a href="profile.html">個人資料</a>
+                        <a href="main.html">登出</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 題目區域 -->
+        <section class="question">
+            <h2>Q3.</h2>
+            <p>
+                撰寫一個程式，讓使用者輸入攝氏溫度（整數型別）。顯示攝氏溫度（佔4個字元）和華氏溫度（顯示整數部分4位，小數部分3位，用空白補齊）。
+            </p>
+        </section>
+
+        <!-- 程式碼區域 -->
+        <section class="code">
+            <h2>程式碼範例</h2>
+            <pre><code>
+# 輸入攝氏溫度
+Celsius = int(input("請輸入攝氏溫度: "))
+print(f"{Celsius:>4}")  # 攝氏溫度佔4個字元
+
+# 計算華氏溫度
+Fahrenheit = Celsius * 9 / 5 + 32
+print(f"{Fahrenheit:>7.3f}")  # 顯示為4位整數和3位小數，補齊空白
+            </code></pre>
+        </section>
+
+        <!-- 參考解答區域 -->
+        <section class="answer">
+            <h2>參考解答</h2>
+            <pre><code>
+Celsius = int(input("請輸入攝氏溫度: "))
+print(f"{Celsius:>4}")
+
+# 計算華氏溫度
+Fahrenheit = Celsius * 9 / 5 + 32
+print(f"{Fahrenheit:>7.3f}")
+            </code></pre>
+        </section>
+
+        <!-- 錯誤分析區域 -->
+        <section class="analysis">
+            <h2>錯誤分析</h2>
+            <ul>
+                <li>未達到格式要求：題目要求整數部分顯示4位且小數部分顯示3位數，不足的位數用空白補充。</li>
+                <li>解決方法：使用格式化字串來正確顯示華氏溫度，例如 `f"{Fahrenheit:>7.3f}"`。</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

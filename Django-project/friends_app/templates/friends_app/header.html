@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logologin.png') }}" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li class="area dropdown">
+                    <a href="#">Python <span class="arrow"></span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="TryPython.html">Python</a></li>
+                        <li><a href="TryHtml.html">HTML</a></li>
+                        <li><a href="#">JAVA</a></li>
+                    </ul>
+                </li>
+                <li class="area"><a href="teach.html">教學區</a></li>
+                <li class="area"><a href="#">問答區</a></li>
+                <li class="area"><a href="ans.html">測驗區</a></li>
+                <li class="area"><a href="#">好友區</a></li>
+                <li class="area profile">
+                    <a href="#"><img src="{{ url_for('static', filename='profile1.png') }}" alt=""></a>
+                    <div class="profile-dropdown">
+                        <a href="profile.html">個人資料</a>
+                        <a href="main.html">登出</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

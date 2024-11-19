@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 教學</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='image/logo.png') }}" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li class="area dropdown">
+                    <a href="#">Python <span class="arrow"></span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">JAVA</a></li>
+                    </ul>
+                </li>
+                <li class="area"><a href="#">教學區</a></li>
+                <li class="area"><a href="#">問答區</a></li>
+                <li class="area"><a href="#">測驗區</a></li>
+                <li class="area"><a href="#">好友區</a></li>
+                <li class="area profile">
+                    <a href="#"><img src="{{ url_for('static', filename='image/profile1.png') }}" alt=""></a>
+                    <div class="profile-dropdown">
+                        <a href="#">個人資料</a>
+                        <a href="#">登出</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header> 
+
+    <main>
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <a href="#">Python 語言介紹</a>
+                    <span class="fraction">2/3</span>
+                </li>
+                <li>
+                    <a href="#">內建資料型別</a>
+                    <span class="fraction">1/3</span>
+                </li>
+                <li>常值</li>
+                <li>變數與數值資料型別</li>
+                <li>運算子</li>
+                <li>資料型別轉換</li>
+                <li>基本輸出入函式</li>
+                <li>結構化程式設計</li>
+                <li>關係運算子</li>
+                <li>邏輯運算式</li>
+                <li>選擇結構</li>
+                <li>for迴圈</li>
+            </ul>
+        </aside>
+
+        <div class="toggle-btn" id="toggle-btn">&#9664;</div> <!-- 箭頭符號 -->
+
+        <section class="content">
+            <h2>Q1.</h2>
+            <p>
+                撰寫一個程式，宣告兩個變數 x、h，分別為三角形的底 25.6、高 10.84，請計算三角形的面積(顯示到小數第二位)
+            </p>
+            <div class="hi">
+                <div class="subject">
+                    <pre><code>
+# 宣告變數
+x = 25.4
+h = 10.84
+# 計算面積
+area = 0.5 * x * h
+print('%.2f' % area)
+                    </code></pre>
+                </div>
+                <div class="go">
+                    <button>下一題</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- 引入JavaScript文件 -->
+</body>
+</html>
