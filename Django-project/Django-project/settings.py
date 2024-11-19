@@ -17,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'friends_app',  # 新增的好友應用程式
     'other_app',# 暫放課程用的
+    'teach_app',
+    'test_app',
 ]
 
 # 中介軟體
@@ -110,6 +112,7 @@ LOGIN_REDIRECT_URL = '/friends/'
 
 
 # 在 settings.py 中設置
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'  # 媒體文件在 URL 中的訪問路徑
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 媒體文件的實際存放路徑
 
