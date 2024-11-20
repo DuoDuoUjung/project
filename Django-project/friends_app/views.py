@@ -4,11 +4,10 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from .models import Friend, PythonTopic, ChatMessage
 from django.views.decorators.csrf import csrf_exempt
-
 from django.http import JsonResponse
 from .models import ChatMessage
 
-
+import json
 import logging
 
 logger = logging.getLogger(__name__)
