@@ -175,3 +175,6 @@ def send_message(request):
         message.save()
         
         return JsonResponse({'status': 'success', 'avatar': request.user.avatar.url if request.user.avatar else '/static/images/default-avatar.png'})
+    
+def header(request):
+    return render(request, 'header.html')
