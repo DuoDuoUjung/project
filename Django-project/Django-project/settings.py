@@ -116,4 +116,4 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'  # 媒體文件在 URL 中的訪問路徑
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 媒體文件的實際存放路徑
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
