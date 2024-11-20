@@ -6,9 +6,15 @@ app = Flask(__name__)
 @app.route('/run-python', methods=['POST'])
 def run_python():
     data = request.get_json()
-    code = data.get('code', '')
+    code = data.get('code', '').strip()
     print(f"Received code on server: {code}")
-    
+
+    if not code:
+        return jsonify({'output': 'Error: No code provided.'})
+
+    if 'import os' in code or 'import shutil' in code:
+        return jsonify({'output': 'Error: Unsafe code detected.'})
+
     try:
         result = subprocess.run(
             ['python', '-c', code],
@@ -26,7 +32,7 @@ def run_python():
 
     return jsonify({'output': output})
 
-# 路由配置，直接渲染模板
+
 @app.route('/TryPython.html')
 def trypython():
     return render_template('TryPython.html')
@@ -47,21 +53,6 @@ def teach():
 def ans():
     return render_template('ans.html')
 
-@app.route('/login.html')
-def login():
-    return render_template('login.html')
-
-@app.route('/main.html')
-def main():
-    return render_template('main.html')
-
-@app.route('/register.html')
-def register():
-    return render_template('register.html')
-
-@app.route('/profile.html')
-def profile():
-    return render_template('profile.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)
