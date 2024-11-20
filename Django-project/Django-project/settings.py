@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import sys
 
 # 基本設置
 BASE_DIR = str(Path(__file__).resolve().parent.parent)
@@ -117,3 +118,6 @@ MEDIA_URL = '/media/'  # 媒體文件在 URL 中的訪問路徑
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 媒體文件的實際存放路徑
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FLASK_SERVICE_DIR = os.path.join(BASE_DIR, '../Flask_service')
+sys.path.append(FLASK_SERVICE_DIR)

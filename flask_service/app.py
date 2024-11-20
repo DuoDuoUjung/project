@@ -1,7 +1,13 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import subprocess
 
 app = Flask(__name__)
+CORS(app)  # 啟用跨域支持
+
+@app.route('/')
+def index():
+    return "Flask App Running"
 
 @app.route('/run-python', methods=['POST'])
 def run_python():

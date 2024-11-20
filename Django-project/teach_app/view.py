@@ -1,20 +1,8 @@
 import requests
-from django.shortcuts import render
 from django.http import JsonResponse
 
-def execute_code(request):
-    """與 Flask 應用交互執行代碼"""
-    if request.method == 'POST':
-        code = request.POST.get('code', '')
-        flask_url = "http://127.0.0.1:5500/run-python"  # Flask 提供的端點
-        try:
-            response = requests.post(flask_url, json={"code": code})
-            if response.status_code == 200:
-                result = response.json()
-                return JsonResponse({'output': result.get('output', 'No output received.')})
-            else:
-                return JsonResponse({'error': 'Flask service returned an error.'}, status=500)
-        except requests.RequestException as e:
-            return JsonResponse({'error': str(e)}, status=500)
+def proxy_to_flask(request):
+    flask_url = "http://127.0.0.1:5500/run-python"  # Flask 的路徑
+    response = requests.post(flask_url, json=request.POST)  # 發送 Django 請求到 Flask
+    return JsonResponse(response.json())  # 返回 Flask 的結果
 
-    return render(request, 'teach_app/execute.html')  # 渲染 Django 的模板
