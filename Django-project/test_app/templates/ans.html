@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q3. 網頁範例</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ans.css') }}">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="ans.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='image/logologin.png') }}" alt="">
-        </div>
+        <img class="logo" src="logologin.png" alt="">
         <nav>
             <ul>
                 <li class="area dropdown">
-                    <a href="#">Python <span class="arrow"></span></a>
+                    <a href="#">Python<span class="arrow"></span></a>
                     <ul class="dropdown-content">
                         <li><a href="TryPython.html">Python</a></li>
                         <li><a href="TryHtml.html">HTML</a></li>
@@ -27,11 +25,11 @@
                 <li class="area"><a href="ans.html">測驗區</a></li>
                 <li class="area"><a href="#">好友區</a></li>
                 <li class="area profile">
-                    <a href="#"><img src="{{ url_for('static', filename='image/profile1.png') }}" alt=""></a>
-                    <div class="profile-dropdown">
-                        <a href="profile.html">個人資料</a>
-                        <a href="main.html">登出</a>
-                    </div>
+                    <img src="profile1.png" alt="">
+                    <ul class="profile-dropdown">
+                        <li><a href="profile.html">個人資料</a></li>
+                        <li><a href="main.html">登出</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -40,9 +38,9 @@
     <main>
         <!-- 題目區域 -->
         <section class="question">
-            <h2>Q3.</h2>
+            <h1>Q3.</h1>
             <p>
-                撰寫一個程式，讓使用者輸入攝氏溫度（整數型別）。顯示攝氏溫度（佔4個字元）和華氏溫度（顯示整數部分4位，小數部分3位，用空白補齊）。
+                撰寫一個程式，讓使用者輸入攝氏溫度（int）。顯示攝氏溫度（佔4個字元）和華氏溫度（顯示整數部分4位，小數部分3位，用空白補齊）。
             </p>
         </section>
 

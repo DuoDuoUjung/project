@@ -14,65 +14,51 @@ body {
     background-image: url('bg.jpg');
     background-position: center;
     background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrap {
-    margin: 6% auto;
-    margin-top: 110px;
     background-color: #344955;
-    padding: 20px;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    width: 90%;
+    width: 70%;
     opacity: 0.8;
-    position: relative;
-    min-height: 70vh;
+    height: 70vh;
 }
 
 .box1 {
-    padding: 0px 20px 20px 20px;
-    margin-left: 1%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 1rem 2rem;
+    width: 49%;
 }
 
 .box-logo img {
-    max-width: 100%;
     height: auto;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 1.5rem;
 }
 
 .box-p {
+    font-size: 1rem;
     color: #fff;
-    margin-top: 10px;
     text-align: center;
 }
 
 .box2 {
-    width: 1px;
-    height: auto;
+    width: 0.05rem;
+    height: 86%;
     background-color: white;
-    align-self: stretch;
-    margin-top: 22px;
-    margin-left: 30px;
-    position: absolute;
-    left: 50%;
-    top: 20px;
-    bottom: 20px;
+    align-self: center;
+    margin: 0 1rem;
 }
 
 .box3 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
+    width: 49%;
+    padding: 2% 9% 0 9%;
 }
 
 .frame1,
@@ -80,75 +66,55 @@ body {
 .frame3,
 .frame4 {
     background-color: rgba(244, 240, 210, 0.13);
-    padding: 20px;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    width: 100%;
-    max-width: 300px;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 1.5rem 2rem;
+    margin-bottom: 0.5rem;
     transition: all 0.3s ease;
-}
-
-.frame-text {
+    display: flex;
     text-align: center;
-    color: white;
-    font-weight: bold;
-    background: none;
-    border: none;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    align-items: center;
 }
 
 .frame-input {
-    display: none;
+    align-items: center;
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 1.7rem;
     background: none;
     border: none;
-    outline: none;
     width: 100%;
-    max-width: 300px;
+    margin: 0;
+    padding: 0;
+    outline: none;
 }
 
 .frame-input:focus {
     border-bottom: 2px solid white;
 }
 
-.hidden {
-    display: none;
+
+.frame-input::placeholder {
+    color: white;
 }
 
-.frame1 .frame-input,
-.frame2 .frame-input,
-.frame3 .frame-input,
-.frame4 .frame-input {
-    display: block;
+.frame-input:focus::placeholder {
+    color: #696a6a;
 }
-
 
 .frame-text1 {
+    margin-top: 1.3rem;
     text-align: center;
-    margin-top: 7%;
-    margin-left: 19%;
+    color: white;
+    font-weight: bold;
 }
 
 .login-button {
-    font-size: 20px;
-    color: white;
     background: none;
     border: none;
+    color: white;
+    font-size: 1.4rem;
     font-weight: bold;
-    cursor: pointer;
     text-align: center;
-    transition: color 0.3s ease;
+    cursor: pointer;
+    padding: 0;
 }

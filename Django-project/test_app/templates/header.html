@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python</title>
-    <!-- 引入共用的 CSS 文件 -->
+    <title>header</title>
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="try.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header 部分 -->
     <header>
         <img class="logo" src="logologin.png" alt="">
         <nav>
@@ -37,24 +33,5 @@
             </ul>
         </nav>
     </header>
-
-    <!-- 編輯器區塊 -->
-    <div class="line">
-        <div class="editor">
-            <div class="header-row">
-                <h2>輸入程式碼</h2>
-                <button onclick="runPythonCode()" class="start"><i class="fas fa-play"></i></button>
-            </div>
-            <textarea id="pythonCode" placeholder="輸入你的Python程式碼"></textarea>
-        </div>
-        <div class="preview">
-            <div class="header-row">
-                <h2>執行結果</h2>
-            </div>
-            <pre id="output" class="result"></pre>
-        </div>
-    </div>
-
-    <script src="pythonscript.js"></script>
 </body>
 </html>

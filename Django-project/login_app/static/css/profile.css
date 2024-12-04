@@ -1,242 +1,177 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #D9D9D9;
+  font-family: Arial, sans-serif;
+  background-color: #D9D9D9;
 }
-form{
-  display:inline;
-}
+
 /*置中*/
 .block {
-    display: flex;
-    justify-content: center;
-    margin-top: 7%;
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  height: 83vh;
+  margin: 0;
+  padding: 0;
 }
+
 /*區塊底色*/
 .card {
-    padding: 20px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    background-color: #E4E4E4;
-    
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+  padding: 5em;
+  border-radius: 10px;
+  background-color: #E4E4E4;
+  position: relative;
 }
-.left{
-    float: left;
-    margin: 40px 0px 40px 40px;
+
+.left {
+  text-align: center;
 }
-.right{
-    float: right;
-    letter-spacing: 20px;
-    margin: 5% 0% 5% 0%;
+
+.right {
+  align-items: center;
 }
-p{
-   padding-top: 10%;
-   padding-bottom: 5%;
-   font-size: 25px;
+
+.userID {
+  padding-top: 10%;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 .save {
-    margin:0% 0% 0% 10%;
-    padding: 5px 17px;
-    border: none;
-    border-radius: 20px;
-    background: #C2C3C3;
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
-    position: relative;
-    justify-content: center;
-    cursor: pointer;
+  /*margin-top: 2em;*/
+  position: absolute;
+  transform: translate(-60%, 50%);
+  padding: 0.4em 0.8em;
+  border: none;
+  border-radius: 20px;
+  background: #C2C3C3;
+  color: black;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .save:hover {
-    background-color: black;
-    color: white;
-}
-.profileimg{
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    /*margin-top: 25%;*/
+  background-color: black;
+  color: white;
 }
 
-.txt {
-    margin: 40px 40px 0px 40px;
-    letter-spacing: 20px;
-    font-size: 28px;
-    line-height: 10mm;
-    color: #344955;
-    font-weight: bold;
-    max-width: 100%;
+.profileimg {
+  width: 14em;
+  height: 14em;
+  border-radius: 50%;
 }
 
-.input{
-    margin: 0;
-    padding: 5px 10px 5px 10px;
-    width: 150px;
-    height: 20px;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
+.space {
+  display: flex;
+  align-items: center;
+  letter-spacing: 1em;
+  font-size: 1.8em;
+  color: #344955;
+  font-weight: bold;
+  max-width: 100%;
+  padding-bottom: 0.5em;
 }
+
+.input {
+  margin: 0;
+  padding: 0.25em 0.5em;
+  width: 8em;
+  height: 1em;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 10px;
+}
+
 input:focus {
-    border-color: #007BFF;  /* 設定點擊時邊框顏色 */
-    cursor: text;           /* 點擊後指標變為文字輸入樣式 */
+  border: #344955;
+  cursor: text;
+  /* 點擊後指標變為文字輸入樣式 */
 }
+
 /*彈出視窗*/
-/* 模态框的样式 */
-/* 模态框的样式 */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  .modal-content {
-    background-color: rgba(52, 73, 85, 0.7);
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  #avatarOptions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* 間隔 */
-  }
-  
-  .avatar-option {
-    cursor: pointer;
-    width: 135px;
-    height: 135px;
-  }
-  
-  .avatar-option img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%; /* 圆形图片 */
-    border: 2px solid #ccc;
-    transition: border 0.3s ease;
-  }
-  
-  .avatar-option img:hover {
-    border: 2px solid #333; /* 悬停时改变边框颜色 */
-  }
-  
-
-  .frame-text {
-    width: 100%;
-    text-align: center;
-    color: #344955;
-    /*font-weight: bold;*/
-    background: none;
-    border: none;
-    letter-spacing: 0px;
-    font-size: 15px;
-    position: absolute;
-    top: 65%;
-    left: 45.3%;
-    transform: translate(-50%, -50%);
-}
-.frame-name {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100%;
-    text-align: center;
-    color: #344955;
-    /*font-weight: bold;*/
-    background: none;
-    border: none;
-    letter-spacing: 0px;
-    font-size: 15px;
-    position: absolute;
-    top: 65%;
-    left: 45.3%;
-    transform: translate(-50%, -50%);
-}
-.frame-birth {
-  width: 100%;
-    text-align: center;
-    color: #344955;
-    /*font-weight: bold;*/
-    background: none;
-    border: none;
-    letter-spacing: 0px;
-    font-size: 15px;
-    position: absolute;
-    top: 65%;
-    left: 45.3%;
-    transform: translate(-50%, -50%);
-}.frame-pw {
-  width: 100%;
-  text-align: center;
-  color: #344955;
-  /*font-weight: bold;*/
-  background: none;
-  border: none;
-  letter-spacing: 0px;
-  font-size: 15px;
-  position: absolute;
-  top: 65%;
-  left: 45.3%;
-  transform: translate(-50%, -50%);
-}
-.frame-email {
-  width: 100%;
-  text-align: center;
-  color: #344955;
-  /*font-weight: bold;*/
-  background: none;
-  border: none;
-  letter-spacing: 0px;
-  font-size: 15px;
-  position: absolute;
-  top: 65%;
-  left: 45.3%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.test{
-  display: inline-block;
-  position: relative;
+.modal-content {
+  background-color: rgba(52, 73, 85, 0.7);
+  margin: 6em auto;
+  padding: 1em 1em 2em 1em;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 35em;
+  border-radius: 10px;
 }
-.space{
-  padding-bottom: 10px;
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
 }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#avatarOptions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5em;
+  /* 間隔 */
+}
+
+.avatar-option {
+  cursor: pointer;
+  width: 8em;
+  height: 8em;
+}
+
+.avatar-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  transition: border 0.3s ease;
+}
+
+.avatar-option img:hover {
+  border: 2px solid #333;
+}
+
 .hidden {
   display: none;
 }
 
-h3{
-  font-size: 20px;
+h3 {
+  font-size: 1.5em;
   color: white;
 }
-.photo-frame{
-  padding-top: 20px;
+
+.photo-frame {
+  padding-top: 1em;
 }

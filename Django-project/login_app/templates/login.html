@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
 </head>
 <body>
     <div class="wrap">
         <div class="box1">
             <div class="box-logo">
-                <img src="{{ url_for('static', filename='image/logologin.png') }}" alt="Logo">
+                <img src="logologin.png" alt="Logo">
             </div>
             <div class="box-p">
                 LET ME CHAT FOR YOU
@@ -21,12 +21,10 @@
         <div class="box2"></div>
         <div class="box3">
             <form action="/login" method="POST">
-                <div class="frame1">
-                    <div class="frame-text" id="account-text">帳號</div>
+                <div class="frame">
                     <input type="text" name="account" placeholder="帳號" required class="frame-input hidden" id="account-input">
                 </div>
-                <div class="frame2">
-                    <div class="frame-text" id="password-text">密碼</div>
+                <div class="frame">
                     <input type="password" name="password" placeholder="密碼" required class="frame-input hidden" id="password-input">
                 </div>
                 <div class="frame-text1">

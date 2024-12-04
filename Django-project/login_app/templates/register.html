@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>註冊</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js"></script>
 </head>
 <body>
     <div class="wrap">
         <div class="box1">
             <div class="box-logo">
-                <img src="{{ url_for('static', filename='image/logologin.png') }}" alt="Logo">
+                <img src="logologin.png" alt="Logo">
             </div>
             <div class="box-p">
                 LET ME CHAT FOR YOU
@@ -20,19 +21,15 @@
         <div class="box3">
             <form action="/register" method="POST">
                 <div class="frame1">
-                    <div class="frame-text" id="account-text">帳號</div>
                     <input type="text" name="account" placeholder="帳號" required class="frame-input hidden" id="account-input">
                 </div>
                 <div class="frame2">
-                    <div class="frame-text" id="name-text">姓名</div>
                     <input type="text" name="name" placeholder="姓名" required class="frame-input hidden" id="name-input">
                 </div>
                 <div class="frame3">
-                    <div class="frame-text" id="email-text">信箱</div>
                     <input type="email" name="email" placeholder="信箱" required class="frame-input hidden" id="email-input">
                 </div>
                 <div class="frame4">
-                    <div class="frame-text" id="password-text">密碼</div>
                     <input type="password" name="password" placeholder="密碼" required class="frame-input hidden" id="password-input">
                 </div>
                 <div class="frame-text1">
@@ -41,7 +38,5 @@
             </form>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
 </body>
 </html>
