@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'other_app',# 暫放課程用的
     'teach_app',
     'test_app',
+    'login_app',
 ]
 
 # 中介軟體
@@ -105,7 +106,6 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # 確保這一行指向你的 static 資料夾
 ]

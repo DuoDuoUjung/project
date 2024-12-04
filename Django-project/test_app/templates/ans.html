@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q3. 網頁範例</title>
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="ans.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ans.css' %}">
 </head>
 <body>
     <header>
-        <img class="logo" src="logologin.png" alt="">
-        <nav>
-            <ul>
-                <li class="area dropdown">
-                    <a href="#">Python<span class="arrow"></span></a>
-                    <ul class="dropdown-content">
-                        <li><a href="TryPython.html">Python</a></li>
-                        <li><a href="TryHtml.html">HTML</a></li>
-                        <li><a href="#">JAVA</a></li>
-                    </ul>
-                </li>
-                <li class="area"><a href="teach.html">教學區</a></li>
-                <li class="area"><a href="#">問答區</a></li>
-                <li class="area"><a href="ans.html">測驗區</a></li>
-                <li class="area"><a href="#">好友區</a></li>
-                <li class="area profile">
-                    <img src="profile1.png" alt="">
-                    <ul class="profile-dropdown">
-                        <li><a href="profile.html">個人資料</a></li>
-                        <li><a href="main.html">登出</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+		<img class="logo" src="{% static 'image/logologin.png' %}" alt="">
+		<nav>
+			<ul>
+				<li class="area dropdown">
+					<a href="#">Python<span class="arrow"></span></a>
+					<ul class="dropdown-content">
+						<li><a href="http://127.0.0.1:5500/TryPython.html">Python</a></li>
+						<li><a href="http://127.0.0.1:5500/TryHtml.html">HTML</a></li>
+					</ul>
+				</li>
+				<li class="area"><a href="http://127.0.0.1:8000/teach_app/teach/">教學區</a></li>
+				<li class="area"><a href="#">問答區</a></li>
+				<li class="area"><a href="http://127.0.0.1:8000/test_app/test/">測驗區</a></li>
+				<li class="area"><a href="#">好友區</a></li>
+				<li class="area profile">
+					<img src="{% static 'image/profile1.png' %}" alt="">
+					<ul class="profile-dropdown">
+						<li><a href="http://127.0.0.1:8000/login_app/profile/">個人資料</a></li>
+						<li><a href="http://127.0.0.1:8000/login_app/main/">登出</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
     <main>
         <!-- 題目區域 -->

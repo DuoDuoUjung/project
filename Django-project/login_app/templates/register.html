@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>註冊</title>
-    <link rel="stylesheet" href="register.css">
-    <script src="register.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <script src="{% static 'js/register.js' %}"></script>
 </head>
 <body>
     <div class="wrap">
         <div class="box1">
             <div class="box-logo">
-                <img src="logologin.png" alt="Logo">
+                <img src="{% static 'image/logologin.png' %}" alt="Logo">
             </div>
             <div class="box-p">
                 LET ME CHAT FOR YOU
