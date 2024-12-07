@@ -21,7 +21,8 @@
         </div>
         <div class="box2"></div>
         <div class="box3">
-            <form action="/login" method="POST">
+            <form method="POST">
+                {% csrf_token %}
                 <div class="frame">
                     <input type="text" name="account" placeholder="帳號" required class="frame-input hidden" id="account-input">
                 </div>
@@ -31,6 +32,11 @@
                 <div class="frame-text1">
                     <button type="submit" class="login-button">登入</button>
                 </div>
+                {% if Error %}
+                <script>
+                    showErrorMessage();
+                </script>
+                {% endif %}
             </form>
         </div>
     </div>

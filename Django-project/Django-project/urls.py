@@ -6,11 +6,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.http import HttpResponseRedirect
 from django.urls import path
+from django.shortcuts import render
 
 
 
 urlpatterns = [
-    path('', views.home, name='home'),  # 根路徑指向首頁
+    #path('', views.home, name='home'),  # 根路徑指向首頁
+    path('', lambda request: render(request, 'index.html'), name='index'),
     path('friends/', views.friend_list, name='friend_list'),  # 好友列表頁面
     path('chat/', views.chat_room, name='chat_room'),  # 聊天頁面
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
