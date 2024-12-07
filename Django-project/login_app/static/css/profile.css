@@ -23,7 +23,6 @@ body {
 /*區塊底色*/
 .card {
   position: relative;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 40rem;
@@ -34,10 +33,12 @@ body {
 }
 
 .left {
+  float: left;
   text-align: center;
 }
 
 .right {
+  float: right;
   align-items: center;
 }
 
@@ -50,7 +51,7 @@ body {
 .save {
   /*margin-top: 2em;*/
   position: absolute;
-  transform: translate(-60%, 50%);
+  transform: translate(0%, 50%);
   padding: 0.4em 0.8em;
   border: none;
   border-radius: 20px;

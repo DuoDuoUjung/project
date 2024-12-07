@@ -16,12 +16,18 @@ main {
 }
 
 .sidebar {
+    overflow-y: auto;
     margin: 0;
     background-color: #f5f5f5;
     padding: 0.5rem 1rem;
-    width: 16rem;
+    width: 15%;
     transition: transform 0.3s ease;
-    position: relative;
+    position: sticky;
+    top: 0;
+    /* 當滾動到距離頂部 0 時固定 */
+    height: calc(100vh - 1rem);
+    /* 根據需要調整高度 */
+    overflow-y: auto;
 }
 
 .sidebar ul {
@@ -44,7 +50,6 @@ main {
     color: #333;
     white-space: nowrap;
     /* 防止換行 */
-    margin-right: 1.7rem;
 }
 
 .sidebar ul li::before {
@@ -62,14 +67,17 @@ main {
 }
 
 /* 填滿前兩個圈圈 */
-.sidebar ul li:nth-child(1)::before,
-.sidebar ul li:nth-child(2)::before {
+.sidebar ul li.completed::before {
     background-color: #344955;
 }
 
 .sidebar a {
     text-decoration: none;
     color: black;
+}
+
+.sidebar-item {
+    cursor: pointer;
 }
 
 .toggle-btn {
@@ -81,15 +89,17 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 0.5rem;
+    width: 0.6%;
     transition: transform 0.3s ease;
     position: absolute;
-    left: 16rem;
+    margin-left: 16.5%;
 }
 
 .content {
+    width: 78%;
     flex: 1;
-    padding: 0 3rem;
+    box-sizing: border-box;
+    padding: 0 3rem 1rem 3rem;
     transition: margin-left 0.3s ease;
 }
 
@@ -98,43 +108,54 @@ main {
 }
 
 .toggle-btn-collapsed {
-    transform: translateX(-16rem);
+    transform: translateX(-16.5vw);
 }
 
 .content-expanded {
-    margin-left: -16rem;
+    margin-left: -16.5%;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: black;
     margin-bottom: 0;
 }
 
 .content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    /* 保留換行和縮排 */
+    word-break: break-word;
+    /* 強制斷字換行 */
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+    line-height: 2;
+}
+
+.hi {
+    margin-top: 1rem;
 }
 
 .subject {
     background-color: #333;
-    height: 25vw;
     font-size: 1.2rem;
     color: white;
     padding: 0 1.8rem;
-    line-height: 2;
     border-radius: 5px;
     overflow-y: auto;
-}
-
-.hi {
-    position: relative;
+    padding: 1rem 1.5rem;
 }
 
 .go {
+    float: right;
     margin-top: 1rem;
-    display: inline-block;
-    position: absolute;
     right: 0;
+}
+
+.go a {
+    text-decoration: none;
+    color: black;
 }
 
 button {
@@ -146,7 +167,7 @@ button {
     border: 5px solid #e3e1e1;
 }
 
-.go a {
-    text-decoration: none;
-    color: black;
+pre {
+    padding: 0;
+    margin: 0;
 }
